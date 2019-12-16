@@ -49,16 +49,16 @@ You need to upload this Github files in your Gogole Drive first.  Next you will 
 When you ask for a prediction (for example)
 answer = model.predict( dfPagesUnique.loc[i, 'body'],myKeyword)
 
-answer is a dictionary that will content :
-answer = {"answers" : answers,  #20 responses texts from  the document
-               "starts" : starts,   #20 Start indexes of responses 
-               "ends" : ends,    #20 end  indexes  responses
-               "doc_tokens" : example.doc_tokens,  #1 document tokens
-               "local_probs" : probs,  #20 best local probs (old indicators or results after softmax)
-               "total_scores" :total_scores,   #20 best scores (not softmaxed)
-               "total_probs" : total_probs,    #20 best probs  (not softmaxed)
-               "mean_total_prob" : mean_total_prob  #the new bert score indicator !!!
-             }
+answer is a dictionary that contents :
+* "answers" : 20 responses texts from  the document
+* "starts" : 20 Start indexes of responses 
+* "ends" : 20 end  indexes of responses
+* "doc_tokens" : document tokens
+* "local_probs" : 20 best local probs (old indicators or results after softmax)
+* "total_scores" :20 best scores (not softmaxed)
+* "total_probs" : 20 best probs  (not softmaxed)
+* "mean_total_prob" : mean on 20 best probs : our new bert score indicator !!!
+
 
 
 
