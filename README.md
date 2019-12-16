@@ -13,4 +13,4 @@ See more information about SQuAD :  https://rajpurkar.github.io/SQuAD-explorer/
 
 # Pretrained Model
 
-In order to use this tool you need to download a pretrained model.  Kamal Jar create one that you can download [here]: https://www.dropbox.com/s/8jnulb2l4v7ikir/model.zip
+In order to use this tool you need to download a pretrained model.  Kamal Jar create one that you can download [here](https://www.dropbox.com/s/8jnulb2l4v7ikir/model.zip)
