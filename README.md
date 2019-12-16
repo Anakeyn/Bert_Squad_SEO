@@ -13,14 +13,16 @@ See more information about SQuAD :  https://rajpurkar.github.io/SQuAD-explorer/
 
 # Pretrained Model
 
-In order to use this tool you need to download a pretrained model.  Kamal Jar create one that you can download [here](https://www.dropbox.com/s/8jnulb2l4v7ikir/model.zip). This file is too big to be upload on Github.
+In order to use this tool you need to download a pretrained model.  Kamal Jar create one that you can download [here](https://www.dropbox.com/s/8jnulb2l4v7ikir/model.zip). 
+
+NB : This file is too big to be upload on Github.
 
 After installing this repository on your computer,  unzip and move files to "model" directory
 
 # Requirements
 
-Python 3 or Anaconda 3.6 or 3.7
-pip3 (or pip) install -r requirements.txt
+* Python 3 or Anaconda 3.6 or 3.7
+* pip3 (or pip) install -r requirements.txt
 
 # Run Bert_Squad_SEO_Score.py on your computer 
 
@@ -28,9 +30,9 @@ Beware !!! The process is very long so we advice you to run it in an IDE (for ex
 Define your question at the begining of the program :
 myKeyword="When Abraham Lincoln died"
 
-The system will scrap Google to get the first 30 pages answering to the question, 
-Next scraping the content of each page
-And for each page calculate a score for the 20 bests responses - The Bert Score for a page is the mean of these 20 scores.
+* The system will scrap Google to get the first 30 pages answering to the question, 
+* Next scraping the content of each page
+* And for each page calculate a score for the 20 bests responses - The Bert Score for a page is the mean of these 20 scores.
 
 # Run Bert_Squad_SEO_Score_Colab.py in [Google Colab](https://colab.research.google.com)
 
