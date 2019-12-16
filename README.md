@@ -15,9 +15,9 @@ Stanford Question Answering Dataset (SQuAD) is a reading comprehension dataset, 
 
 See more information about SQuAD :  https://rajpurkar.github.io/SQuAD-explorer/
 
-# Pretrained Model
+# Pretrained Model for Q&A tasks
 
-In order to use this tool you need to download a pretrained model.  Kamal Jar create one that you can download [here](https://www.dropbox.com/s/8jnulb2l4v7ikir/model.zip). 
+In order to use this tool you need to download a BERT pretrained model fine tuned for Question and Answers tasks.  Kamal created one and you can download [here](https://www.dropbox.com/s/8jnulb2l4v7ikir/model.zip). 
 
 NB : This file is too big to be upload on Github.
 
