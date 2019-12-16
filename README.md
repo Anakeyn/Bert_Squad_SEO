@@ -51,8 +51,8 @@ answer = model.predict( dfPagesUnique.loc[i, 'body'],myKeyword)
 
 answer is a dictionary that contents :
 * "answers" : 20 responses texts from  the document
-* "starts" : 20 Start indexes of responses 
-* "ends" : 20 end  indexes of responses
+* "starts" : 20 Start indexes of responses in doc_tokens
+* "ends" : 20 end  indexes of responses in doc_tokens
 * "doc_tokens" : document tokens
 * "local_probs" : 20 best local probs (old indicators or results after softmax)
 * "total_scores" :20 best scores (not softmaxed)
