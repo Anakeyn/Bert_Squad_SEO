@@ -5,7 +5,7 @@ This tool is using  Bert-SQuAD created by Kamal Raj. We modified  it to calculat
 regarding several documents and not a score inside a unique document (softmax score).
 see original BERT-SQuAD : https://github.com/kamalkraj/BERT-SQuAD
 
-#What is BERT?
+# What is BERT?
 
 Bidirectional Encoder Representations from Transformers (BERT) is a technique for NLP (Natural Language Processing) pre-training developed by Google
 
