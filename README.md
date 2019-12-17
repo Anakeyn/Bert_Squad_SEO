@@ -17,11 +17,18 @@ See more information about SQuAD :  https://rajpurkar.github.io/SQuAD-explorer/
 
 # Pretrained Model for Q&A tasks
 
-In order to use this tool you need to download a BERT pretrained model fine tuned for Question and Answers tasks.  Kamal created one and you can download [here](https://www.dropbox.com/s/8jnulb2l4v7ikir/model.zip). 
+You can find pre trained model fine tuned on SQuAD on the official list from Hugging Face
+https://huggingface.co/transformers/pretrained_models.html 
 
-NB : This file is too big to be upload on Github.
+At that time we found two available models (in English only) :
+* 'bert-large-uncased-whole-word-masking-finetuned-squad'
+* 'bert-large-cased-whole-word-masking-finetuned-squad'
 
-After installing this repository on your computer,  unzip and move files to "model" directory
+As we modify the QA class written by Kamal Raj so now give directly the name of a pretrained model (not a directory) and a size for the n best values desired :
+```
+n_best_size = 20
+model = QA('bert-large-uncased-whole-word-masking-finetuned-squad', n_best_size) 
+```
 
 # Requirements
 
@@ -40,7 +47,7 @@ myKeyword="When Abraham Lincoln died"
 
 # Run Bert_Squad_SEO_Score_Colab.py in [Google Colab](https://colab.research.google.com)
 
-We create a Jupyter Notebook in order to run it in Google Colab.  Google Colab may be more fast to run it on his environment than on your computer. Don't forget to select Python3 and GPU in  the notebook parameters.
+We create a Jupyter Notebook in order to run it in Google Colab.  Google Colab may be more fast to run it on its environment than on your computer. Don't forget to select Python3 and GPU in  the notebook parameters.
 
 You need to upload this Github files in your Gogole Drive first.  Next you will need to "mount" you Gogole Drive in Google Colab in order to access the model and to save results files.
 
