@@ -1,13 +1,14 @@
 # Bert_Squad_SEO
+
 This tool provide a "Bert Score" for first max 30 pages responding to a question in Google
 
 This tool is using  Bert-SQuAD created by Kamal Raj. 
 
-We modified  it to calculate a "Bert Score"  (in get_answer function)
+We modified the "get_answer" function in order to calculate a "Bert Score"  
 regarding several documents and not a score inside a unique document (softmax score).
 see original BERT-SQuAD : https://github.com/kamalkraj/BERT-SQuAD
 
-We also modify the QA class in order to use "official" pre trained fine tuned for SQuAD models from Hugging Face (see below)
+We also modify the "QA" class in order to use "official" pre trained fine tuned for SQuAD models from Hugging Face (see below)
 
 # What is BERT?
 
@@ -53,7 +54,7 @@ myKeyword="When Abraham Lincoln died"
 
 We create a Jupyter Notebook in order to run it in Google Colab.  Google Colab may be more fast to run it on its environment than on your computer. Don't forget to select Python3 and GPU in  the notebook parameters.
 
-You need to upload this Github files in your Gogole Drive first.  Next you will need to "mount" you Gogole Drive in Google Colab in order to access the model and to save results files.
+You will need to "mount" you Google Drive in Google Colab in order to save results files.
 
 # Predict Results
 
