@@ -4,11 +4,11 @@ This tool provide a "Bert Score" for first max 30 pages responding to a question
 
 This tool is using  Bert-SQuAD created by Kamal Raj. 
 
-We modified the "get_answer" function in order to calculate a "Bert Score"  
+We modified the "get_answer" function in order to calculate a "Bert Score"  (in utils.py file)
 regarding several documents and not a score inside a unique document (softmax score).
 see original BERT-SQuAD : https://github.com/kamalkraj/BERT-SQuAD
 
-We also modify the "QA" class in order to use "official" pre trained fine tuned for SQuAD models from Hugging Face (see below)
+We also modify the "QA" class in bert.py file in order to use "official" pre trained fine tuned for SQuAD models from Hugging Face (see below)
 
 # What is BERT?
 
@@ -29,7 +29,7 @@ At that time we found two available models (in English only) :
 * 'bert-large-uncased-whole-word-masking-finetuned-squad'
 * 'bert-large-cased-whole-word-masking-finetuned-squad'
 
-As we modify the QA class written by Kamal Raj so now give directly the name of a pretrained model (not a directory) and a size for the n best values desired :
+As we modify the QA class written by Kamal Raj, You need to give directly the name of a pretrained model (not a directory on your computer) and a size for the n best values desired :
 ```
 n_best_size = 20
 model = QA('bert-large-uncased-whole-word-masking-finetuned-squad', n_best_size) 
