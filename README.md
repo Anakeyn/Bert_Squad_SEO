@@ -1,9 +1,13 @@
 # Bert_Squad_SEO
 This tool provide a "Bert Score" for first max 30 pages responding to a question in Google
 
-This tool is using  Bert-SQuAD created by Kamal Raj. We modified  it to calculate a "Bert Score"
+This tool is using  Bert-SQuAD created by Kamal Raj. 
+
+We modified  it to calculate a "Bert Score"  (in get_answer function)
 regarding several documents and not a score inside a unique document (softmax score).
 see original BERT-SQuAD : https://github.com/kamalkraj/BERT-SQuAD
+
+We also modify the QA class in order to use "official" pre trained fine tuned for SQuAD models from Hugging Face (see below)
 
 # What is BERT?
 
