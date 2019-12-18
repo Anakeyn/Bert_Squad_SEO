@@ -1,8 +1,5 @@
-
-#see original at BERT-SQuAD  by Kamal Raj : #https://github.com/kamalkraj/BERT-SQuAD
-#Modifications by Pierre Rouarch  16/12/2019
-#beware we change answer content in get_answer see below 
-
+#Original by Kamal Raj see https://github.com/kamalkraj/BERT-SQuAD
+#modified by Pierre Rouarch 16/12/2019. see #PR
 
 from __future__ import absolute_import, division, print_function
 
@@ -11,7 +8,8 @@ import math
 
 import numpy as np
 import torch
-from pytorch_transformers.tokenization_bert import (BasicTokenizer,
+#PR transformers instead of  pytorch_transformers
+from transformers.tokenization_bert import (BasicTokenizer,
                                                     whitespace_tokenize)
 from torch.utils.data import DataLoader, SequentialSampler, TensorDataset
 
@@ -524,7 +522,7 @@ def get_answer(example, features, all_results, n_best_size,
     #PR Total_probs create from total_scores (which is a logit)
     total_probs = [] 
     for score in total_scores :  #total score = 
-        total_probs.append(1/(1+math.exp(-score)))  
+        total_probs.append(1/(1+math.exp(-score)))  #transform a logit in proba
     mean_total_prob = np.mean(total_probs )   
 
     
@@ -533,7 +531,7 @@ def get_answer(example, features, all_results, n_best_size,
     
     answer = {"answers" : answers,  #responses   texts 
                "starts" : starts,   #Start indexes of responses
-               "ends" : ends,    #Start indexes  responses
+               "ends" : ends,    #end indexes  responses
                "doc_tokens" : example.doc_tokens,  #document tokens
                "local_probs" : probs,  #all best local probs (old indicators or results after softmax)
                "total_scores" :total_scores,   #All best scores (not softmaxed)

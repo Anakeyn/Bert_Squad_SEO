@@ -1,9 +1,5 @@
-
-#see original at BERT-SQuAD  by Kamal Raj : #https://github.com/kamalkraj/BERT-SQuAD
-#Modifications by Pierre Rouarch  16/12/2019
-#We just add a parameter n_best_size in class QA definition.
-#beware we change answer content in get_answer (see in utils.py)
-
+#Original by Kamal Raj see https://github.com/kamalkraj/BERT-SQuAD
+#modified by Pierre Rouarch 16/12/2019. see #PR
 
 from __future__ import absolute_import, division, print_function
 
@@ -13,7 +9,8 @@ import math
 
 import numpy as np
 import torch
-from pytorch_transformers import (WEIGHTS_NAME, BertConfig,
+#PR new : transformers instead of pytorch_transformers
+from transformers import (WEIGHTS_NAME, BertConfig,
                                   BertForQuestionAnswering, BertTokenizer)
 from torch.utils.data import DataLoader, SequentialSampler, TensorDataset
 
@@ -32,7 +29,7 @@ class QA:
         self.doc_stride = 128
         self.do_lower_case = True
         self.max_query_length =64# orig 64
-        self.n_best_size =  n_best_size #orig 20  #Change by PR
+        self.n_best_size =  n_best_size #orig 20  #PR we  set this as an input parameter in QA 
         self.max_answer_length = 30
         self.model, self.tokenizer = self.load_model(model_path)
         if torch.cuda.is_available():
@@ -44,9 +41,14 @@ class QA:
 
 
     def load_model(self,model_path: str,do_lower_case=False):
-        config = BertConfig.from_pretrained(model_path + "/bert_config.json")
-        tokenizer = BertTokenizer.from_pretrained(model_path, do_lower_case=do_lower_case)
-        model = BertForQuestionAnswering.from_pretrained(model_path, from_tf=False, config=config)
+        #old version by Kam
+        #config = BertConfig.from_pretrained(model_path + "/bert_config.json")
+        #tokenizer = BertTokenizer.from_pretrained(model_path, do_lower_case=do_lower_case)
+        #model = BertForQuestionAnswering.from_pretrained(model_path, from_tf=False, config=config)
+        
+        #PR use a standard  https://huggingface.co/transformers/pretrained_models.html  SQuAD fine Tune Model
+        tokenizer = BertTokenizer.from_pretrained(model_path)
+        model = BertForQuestionAnswering.from_pretrained(model_path)      
         return model, tokenizer
     
     def predict(self,passage :str,question :str):

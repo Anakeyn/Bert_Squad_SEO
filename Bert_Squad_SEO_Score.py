@@ -1,32 +1,31 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Dec 15 16:03:38 2019
+Created on Wed Dec 18 16:46:23 2019
 
 @author: Pierre
 """
 #############################################################
-# Bert_Squad_SEO_Score.py
-# Anakeyn Bert Squad Score for SEO Alpha 0.1
-# This tool provide a "Bert Score" for first max 30 pages responding to a question in Google.
-# This tool is using  Bert-SQuad created by Kamal Raj. We modified  it to calculate a "Bert Score"
-# regarding several documents and not a score inside a unique document.
+# Bert-Score-SEO.py
+# Anakeyn Bert-Score for SEO Alpha 0.1
+# This tool provide a "Bert Score" for first max 30 pages responding to a question in Googe.
+#This tool is using  Bert-SQuad created by Kamal Raj. We modified  it to calculate a "Bert-Score"
+# regarding severall documents and not a score inside a unique document.
 # see original BERT-SQuAD : #https://github.com/kamalkraj/BERT-SQuAD
 #############################################################
 #Copyright 2019 Pierre Rouarch 
-# License GPL V3
-#############################################################
-
-myKeyword="When Abraham Lincoln died"
-
-
-
+ # License GPL V3
+ #############################################################
+myKeyword="When Abraham Lincoln died and how?"
 from bert import QA
+ #from bert import QA
 n_best_size = 20
-
+#list of pretrained model
+#https://huggingface.co/transformers/pretrained_models.html
+#!!!!!  instantiate a BERT model  fine tuned on SQuAD
 #Choose your model
-model = QA('model', n_best_size)  #Default model provided by Kamal Raj and pretrained for Q&A. 
-#based on model : bert-large-uncased-whole-word-masking
-# download here :  https://www.dropbox.com/s/8jnulb2l4v7ikir/model.zip
+#'bert-large-uncased-whole-word-masking-finetuned-squad'
+#'bert-large-cased-whole-word-masking-finetuned-squad'
+model = QA('bert-large-uncased-whole-word-masking-finetuned-squad', n_best_size) 
 
 
 #import needed libraries
@@ -122,10 +121,10 @@ while myStart <  myMaxStart:
 
 
 dfScrap.info()
-dfScrapUnique=dfScrap.drop_duplicates()  #on enlève les evéntuels doublons
+dfScrapUnique=dfScrap.drop_duplicates()  #remove duplicates
 dfScrapUnique.info()
-#Sauvegarde 
-dfScrapUnique.to_csv("dfScrapUnique.csv", sep=";", encoding='utf-8', index=False)  #séparateur ; 
+#Save
+dfScrapUnique.to_csv("dfScrapUnique.csv", sep=",", encoding='utf-8', index=False)  #séparateur ; 
 dfScrapUnique.to_json("dfScrapUnique.json")
 
 ###### filter extensions
@@ -246,12 +245,13 @@ for i in range(0,len(dfPagesUnique)) :
 
 dfPagesAnswers.info()
 #Save Answers
-dfPagesAnswers.to_csv("dfPagesAnswers.csv", sep=";", encoding='utf-8', index=False)    
+dfPagesAnswers.to_csv("dfPagesAnswers.csv", sep=",", encoding='utf-8', index=False)    
 
 dfPagesUnique.info()
 #Save Bert Scores by page
 dfPagesSummary = dfPagesUnique[['keyword', 'page', 'position', 'BERT_score', 'search_date']]
-dfPagesSummary.to_csv("dfPagesSummary.csv", sep=";", encoding='utf-8', index=False)         
+dfPagesSummary.to_csv("dfPagesSummary.csv", sep=",", encoding='utf-8', index=False)         
  #Save page content in csv and json
-dfPagesUnique.to_csv("dfPagesUnique.csv", sep=";", encoding='utf-8', index=False)  #sep ; 
+dfPagesUnique.to_csv("dfPagesUnique.csv", sep=",", encoding='utf-8', index=False)  #sep ,
 dfPagesUnique.to_json("dfPagesUnique.json")
+

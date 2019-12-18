@@ -1,4 +1,4 @@
 torch torchvision
-pytorch-transformers
+transformers
 google
 
