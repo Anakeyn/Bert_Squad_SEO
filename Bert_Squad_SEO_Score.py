@@ -5,8 +5,8 @@ Created on Wed Dec 18 16:46:23 2019
 @author: Pierre
 """
 #############################################################
-# Bert-Score-SEO.py
-# Anakeyn Bert-Score for SEO Alpha 0.1
+# Bert_Squad_SEO_Score.py
+# Anakeyn Bert Squad Score for SEO Alpha 0.1
 # This tool provide a "Bert Score" for first max 30 pages responding to a question in Googe.
 #This tool is using  Bert-SQuad created by Kamal Raj. We modified  it to calculate a "Bert-Score"
 # regarding severall documents and not a score inside a unique document.
