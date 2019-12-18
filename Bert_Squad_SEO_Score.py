@@ -17,7 +17,7 @@ Created on Wed Dec 18 16:46:23 2019
  #############################################################
 myKeyword="When Abraham Lincoln died and how?"
 from bert import QA
- #from bert import QA
+
 n_best_size = 20
 #list of pretrained model
 #https://huggingface.co/transformers/pretrained_models.html
