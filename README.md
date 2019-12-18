@@ -35,6 +35,7 @@ n_best_size = 20
 model = QA('bert-large-uncased-whole-word-masking-finetuned-squad', n_best_size) 
 ```
 
+
 # Requirements
 
 * Python 3 or Anaconda 3.6 or 3.7
@@ -71,6 +72,8 @@ answer is a dictionary that contents :
 * "total_probs" : 20 best probs  (not softmaxed)
 * "mean_total_prob" : mean on 20 best probs : our new bert score indicator !!!
 
+# More 
+Post (in french) about this tool : https://www.anakeyn.com/2019/12/18/score-bert-referencement-seo/
 
 
 
