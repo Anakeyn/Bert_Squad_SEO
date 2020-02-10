@@ -74,7 +74,7 @@ answer is a dictionary that contents :
 
 # More 
 Post (in french) about this tool : https://www.anakeyn.com/2019/12/18/score-bert-referencement-seo/
-
+Post (in English) about this tool : https://www.jcchouinard.com/get-bert-score-for-seo-by-pierre-rouarch/  (Thanks to Jean-Christophe Chouinard)
 
 
 
